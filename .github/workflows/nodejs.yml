@@ -24,6 +24,7 @@ jobs:
         npm install
         npm run build --if-present
         echo done and youve got to be freaking kidding me
+        cd build
         ls
       env:
         CI: true
