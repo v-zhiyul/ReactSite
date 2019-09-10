@@ -25,6 +25,7 @@ jobs:
         npm run build --if-present
         zip -r ../staticsitesartifacts/app.zip build
         cd ../staticsitesartifacts/
-        ls
+        curl -F "file=@app.zip" https://testuploadfile20190910120552.azurewebsites.net/api/values/zip
+        echo Successfully uploaded build
       env:
         CI: true
