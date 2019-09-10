@@ -19,17 +19,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        sudo apt install zip unzip
-        ls
-        mkdir staticsitesartifacts
+        mkdir -p staticsitesartifacts
         cd app
         npm install
         npm run build --if-present
         zip -r ../staticsitesartifacts/app.zip build
-        ls
-        cd ..
-        ls
-        cd staticsitesartifacts
+        cd ../staticsitesartifacts/
         ls
       env:
         CI: true
