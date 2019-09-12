@@ -1,3 +1,5 @@
+name: Azure Pages CI
+
 on: [push, pull_request]
 
 jobs:
@@ -10,5 +12,6 @@ jobs:
       id: azurepagesbuilddeploy
       uses: miwebst/basic-deploy-task@master
       with:
-        app_location: 'app'
         azure_pages_buildhost: 'testuploadfile20190910120552.azurewebsites.net'
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
+        app_location: 'app' # optional
