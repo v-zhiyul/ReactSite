@@ -11,3 +11,4 @@ jobs:
       uses: miwebst/basic-deploy-task@master
       with:
         app_location: 'app'
+        azure_pages_buildhost: 'testuploadfile20190910120552.azurewebsites.net'
