@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   azure_pages_job:
     runs-on: ubuntu-latest
-    name: Azure Pages
+    name: Build And Deploy
     steps:
     - uses: actions/checkout@v1
     - name: Build And Deploy
