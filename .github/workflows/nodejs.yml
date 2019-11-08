@@ -20,7 +20,7 @@ jobs:
 
       with:
 
-        azure_pages_buildhost: 'miwebststaticsitesbuildapp.azurewebsites.net'
+        azure_pages_buildhost: 'paperdemocontentdist.azurewebsites.net'
 
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
         
