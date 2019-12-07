@@ -22,6 +22,6 @@ jobs:
     - uses: miwebst/anotherdeploy@master
       with:
         azure_pages_contenthost: 'miwebstsslinux.azurewebsites.net'
-        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}           
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_2 }}           
         app_artifact_location: 'app/build'
         api_artifact_location: 'api'
