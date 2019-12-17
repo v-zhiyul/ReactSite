@@ -1,33 +1,37 @@
 name: Azure Pages CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+    - master
+
 jobs:
-
-  azure_pages_job:
-
+  azure_pages_build_and_upload_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-
-    name: Build And Deploy
-
+    name: Azure Pages Build And Deploy
     steps:
-
     - uses: actions/checkout@v1
-
-    - name: Build And Deploy
-
-      id: azurepagesbuilddeploy
-
-      uses: joslinmicrosoft/basic-deploy-task@master
-
+    - shell: bash
+      run: |
+        npm install
+        npm run build
+    - uses: miwebst/anotherdeploy@master
       with:
-
-        azure_pages_buildhost: 'miwebststaticsitesbuildapp.azurewebsites.net'
-
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
-        
-        azure_pages_api_version: 'v1' # optional
-        
-        app_build_output_location: 'build'
-
-        app_source_location: 'app' # optional
-
-        azure_function_location: 'api' # optional
+        action: 'upload'         
+        app_artifact_location: 'build'
+        api_artifact_location: ''
+  
+  azure_pages_close_pr_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Azure Pages Close Pull Request Job
+    steps:
+    - uses: miwebst/anotherdeploy@master
+      with:
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
+        action: 'close'
