@@ -23,7 +23,7 @@ jobs:
     - uses: miwebst/anotherdeploy@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN }}
-        action: 'upload'         
+        action: 'upload --verbose'         
         app_artifact_location: 'app/build'
         api_artifact_location: 'api'
   
