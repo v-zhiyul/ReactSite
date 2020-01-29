@@ -18,10 +18,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: azurepagesbuilddeploy
-      uses: joslinmicrosoft/staticsitesaction@master
+      uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_SALMON_BUSH_1A5D289E }}
-        action: 'upload --oryxEnabled true'
+        action: 'upload'
         app_source_location: 'app' # App Content Path
         api_source_location: 'api' # Api Content Path - optional
 
@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Close Pull Request
       id: azurepagesclosepullrequest
-      uses: joslinmicrosoft/staticsitesaction@master
+      uses: joslinmicrosoft/staticsitesactionoryx@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_SALMON_BUSH_1A5D289E }}
-        action: 'close --oryxEnabled true'
+        action: 'close'
