@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: miwebst/anotherdeploy@dev
+      uses: miwebst/anotherdeploy@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_ZEALOUS_SMOKE_1AD72BBE }}
         action: 'upload'
@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Close Pull Request
       id: closepullrequest
-      uses: miwebst/anotherdeploy@dev
+      uses: miwebst/anotherdeploy@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_ZEALOUS_SMOKE_1AD72BBE }}
         action: 'close'
