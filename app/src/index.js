@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import logo from './logo.svg';
+import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
@@ -10,21 +12,43 @@ import axios from 'axios';
 
 class FetchDemo extends React.Component {
     state = {
-      posts: []
+      names: []
     }
   
     componentDidMount() {
       axios.get(`/.api/${this.props.subreddit}`)
         .then(res => {
-          console.log(res.data)
+          console.log(res[0])
+          const names = res;
+          this.setState({names});
         });
     }
   
     render() {
       return (
-        <div>
-          <h1>trying something</h1>
-        </div>
+        <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Look at this really cool spinny thing we have here.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Everything is fine.
+          </a>
+          <a 
+            className="App-link"
+            href="https://cerulean-iguana-839.azurestaticwebsites.net/.auth/login/aad"
+          >
+          Log in with Azure AD
+          </a>
+          <p>{this.state.names}</p>
+        </header>
+      </div>
       );
     }
   }
