@@ -19,7 +19,7 @@ class FetchDemo extends React.Component {
       axios.get(`/.api/${this.props.subreddit}`)
         .then(res => {
           console.log(res.data[0])
-          names = res.data;
+          var names = res.data;
           this.setState({names});
         });
     }
