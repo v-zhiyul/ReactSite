@@ -20,7 +20,7 @@ jobs:
       id: builddeploy
       uses: miwebst/anotherdeploy@master
       with:
-        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MANGO_COAST_0E1C1F84 }}
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MANGO_COAST_0E1C1F85 }}
         action: 'upload'
         app_location: 'app' # App Source Code Path
         api_location: 'api' # Api Source Code Path - optional
@@ -35,5 +35,5 @@ jobs:
       id: closepullrequest
       uses: miwebst/anotherdeploy@master
       with:
-        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MANGO_COAST_0E1C1F84 }}
+        azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_MANGO_COAST_0E1C1F85 }}
         action: 'close'
