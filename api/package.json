@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "coffeescript": "~1.6.3"
-  },
+  ,
   "devDependencies": {}
 }
