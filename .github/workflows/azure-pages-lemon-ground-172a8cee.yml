@@ -21,7 +21,7 @@ jobs:
       uses: miwebst/anotherdeploy@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_LEMON_GROUND_172A8CEE }}
-        action: 'upload'
+        action: 'upload --verbose'
         app_location: 'app' # App Source Code Path
         api_location: 'api' # Api Source Code Path - optional
         app_artifact_location: 'build' # Built App Content Directory - optional
