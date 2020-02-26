@@ -6,7 +6,8 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "coffeescript": "~1.6.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "coffeescript": "~1.6.3"
+  }
 }
