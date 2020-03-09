@@ -23,9 +23,11 @@ jobs:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_THANKFUL_ISLAND_13E5C2AE }}
         repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
         action: 'upload --verbose'
+        ###### Repository/Build Configurations - Configure these to match your application! ######
         app_location: 'app' # App Source Code Path
         api_location: 'api' # Api Source Code Path - optional
         app_artifact_location: 'build' # Built App Content Directory - optional
+        ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
