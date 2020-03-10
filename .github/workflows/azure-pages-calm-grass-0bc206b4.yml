@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: joslinmicrosoft/staticsitesactionoryx@master
+      uses: miwebst/anotherdeploy@master
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_CALM_GRASS_0BC206B4 }}
         action: 'upload'
