@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build And Deploy
       id: builddeploy
-      uses: miwebst/anotherdeploy@master
+      uses: miwebst/anotherdeploy@master # try out branding
       with:
         azure_pages_api_token: ${{ secrets.AZURE_PAGES_API_TOKEN_NICE_DUNE_14E74A9E }}
         repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
