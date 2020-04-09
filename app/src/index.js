@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import logo from './logo.svg';
 import './App.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 //import { BrowserRouter } from 'react-router-dom';
