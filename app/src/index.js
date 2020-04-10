@@ -29,21 +29,13 @@ class FetchDemo extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Look at this really cool spinny thing we have here!!!
+            If you login with Github below, I'll say hi :)
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Everything is fine.
-          </a>
           <a 
             className="App-link"
-            href="https://cerulean-iguana-839.azurestaticwebsites.net/.auth/login/aad"
+            href="/login"
           >
-          Log in with Azure AD
+          Login with Github
           </a>
           <p>{this.state.userName}</p>
         </header>
