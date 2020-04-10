@@ -11,15 +11,15 @@ import axios from 'axios';
 
 class FetchDemo extends React.Component {
     state = {
-      user: []
+      userName: ''
     }
   
     componentDidMount() {
       axios.get(`/api/${this.props.subreddit}`)
         .then(res => {
           console.log(res.data);
-          //var user = res.data;
-          //this.setState({user});
+          var userName = 'Hey ' + res.data.userDetails + '!';
+          this.setState({userName});
         });
     }
   
@@ -45,7 +45,7 @@ class FetchDemo extends React.Component {
           >
           Log in with Azure AD
           </a>
-          <p>{this.state.user}</p>
+          <p>{this.state.userName}</p>
         </header>
       </div>
       );
