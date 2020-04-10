@@ -11,7 +11,7 @@ import axios from 'axios';
 
 class FetchDemo extends React.Component {
     state = {
-      user: {}
+      user: []
     }
   
     componentDidMount() {
