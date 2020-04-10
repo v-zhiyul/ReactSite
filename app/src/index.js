@@ -15,7 +15,7 @@ class FetchDemo extends React.Component {
     }
   
     componentDidMount() {
-      axios.get(`/.api/${this.props.subreddit}`)
+      axios.get(`/api/${this.props.subreddit}`)
         .then(res => {
           console.log(res.data[0])
           var names = res.data;
