@@ -31,12 +31,8 @@ class FetchDemo extends React.Component {
           <p>
             If you login with Github below, I'll say hi :)
           </p>
-          <a 
-            className="App-link"
-            href="/login"
-          >
-          Login with Github
-          </a>
+          <a className="App-link" href="/login"> Login with Github </a>
+          <a className="App-link" href="/logout"> Logout</a>
           <p>{this.state.userName}</p>
         </header>
       </div>
