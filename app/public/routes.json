@@ -29,10 +29,6 @@
       "statusCode": "404"
     },
     {
-      "route": "/api/getlist",
-      "allowedRoles": ["admin"]
-    },
-    {
       "route": "/api/*",
       "allowedRoles": ["authenticated"]
     },
