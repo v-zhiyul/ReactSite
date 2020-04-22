@@ -11,14 +11,14 @@ function getUserInfo(req){
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    context.res = {
-        body: "No user found"
-    };
-    return;
     
-    //const user = getUserInfo(req);
+    const user = getUserInfo(req);
+    if (user === null)
+    {
+        user = {}
+    }
 
-    //context.res = {
-      //  body: user
-    //}
+    context.res = {
+        body: user
+    }
 };
